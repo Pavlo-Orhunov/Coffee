@@ -134,7 +134,10 @@ body {
   transform: translate(0, 0);
   opacity: 1;
 }
-
+.loaded .button:hover,
+.loaded .button:focus {
+  transition-delay: 0s;
+}
 @media (max-width: 991.98px) {
   .hero {
     background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0.5) 100%),
@@ -711,6 +714,10 @@ body {
   width: 82px;
   height: 82px;
   background: url("../img/feedback/arrow.svg") center no-repeat;
+  transition: opacity 0.3s ease 0s;
+}
+.feedback__arrow:hover {
+  opacity: 0.8;
 }
 .feedback__arrow-prev {
   left: 0;

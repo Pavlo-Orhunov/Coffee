@@ -14,12 +14,13 @@
   line-height: 1.2;
   color: var(--color-dark-text);
   background-color: var(--color-buttons);
-  transition: background-color 0.3s ease 0s;
   white-space: nowrap;
+  transition: background-color 0.3s ease 0s;
 }
 .button:hover,
 .button:focus {
   background-color: hsl(36, 92%, 50%);
+  transition: background-color 0.3s ease 0s;
 }
 .button:active {
   transform: scale(0.95);
