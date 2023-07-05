@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="20"
+   height="19.879"
+   viewBox="0 0 20 19.879"
+   fill="none"
+   version="1.1"
+   id="svg23"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     id="Group 50"
+     transform="translate(-2,-2)">
+    <path
+       id="Vector_2"
+       d="M 12,2 C 6.477,2 2,6.477 2,12 c 0,4.991 3.657,9.128 8.438,9.879 V 14.89 H 7.898 V 12 h 2.54 V 9.797 c 0,-2.506 1.492,-3.89 3.777,-3.89 1.094,0 2.238,0.195 2.238,0.195 v 2.46 h -1.26 c -1.243,0 -1.63,0.771 -1.63,1.562 V 12 h 2.773 l -0.443,2.89 h -2.33 v 6.989 C 18.343,21.129 22,16.99 22,12 22,6.477 17.523,2 12,2 Z"
+       fill="#ffffff" />
+  </g>
+  <defs
+     id="defs21" />
+</svg>

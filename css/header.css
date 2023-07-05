@@ -1,0 +1,243 @@
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 60px;
+}
+.header__wrapper {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.header__width {
+  max-width: var(--wrapper-width);
+  margin: 0 auto;
+  transition: min-height 0.3s ease 0s, background-color 0.3s ease 0s;
+}
+.header--scrolled .header__width {
+  background-color: rgba(14, 14, 14, 0.75);
+}
+@media (any-hover: hover) {
+  .header--scrolled .header__width:hover {
+    background-color: rgba(14, 14, 14, 0.95);
+  }
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: min-height 0.3s ease 0s;
+}
+.header--scrolled .header__container {
+  min-height: 60px;
+}
+@media (max-width: 991.98px) {
+  .header__container {
+    min-height: 78px;
+  }
+  .header--scrolled .header__container {
+    min-height: 58px;
+  }
+}
+
+.header__logo {
+  position: relative;
+  z-index: 5;
+}
+.header__menu {
+  margin-left: 50px;
+  margin-right: 5px;
+  flex: 1 1 auto;
+}
+.menu {
+}
+.menu__body {
+}
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 60px;
+  row-gap: 10px;
+}
+@media (max-width: 991.98px) {
+  .header__menu {
+    margin-left: 0;
+  }
+  .menu__list {
+    column-gap: 40px;
+  }
+}
+.menu__item {
+  display: flex;
+  align-items: center;
+}
+.menu__link {
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 500;
+}
+.header__actions {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 35px;
+  row-gap: 10px;
+}
+.actions__login {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+.actions__signup {
+  max-width: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark-text);
+}
+.icon-menu {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .icon-menu {
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .icon-menu span,
+  .icon-menu::before,
+  .icon-menu::after {
+    right: 0;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    transition: all 0.3s ease 0s;
+  }
+  .icon-menu::before,
+  .icon-menu::after {
+    content: "";
+  }
+  .icon-menu::before {
+    top: 0;
+  }
+  .icon-menu::after {
+    bottom: 0;
+  }
+  .icon-menu span {
+    width: 85%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .icon-menu._active span {
+    transform: translate(500%, -50%);
+  }
+  .icon-menu._active::before {
+    content: "";
+    width: 56px;
+    height: 6px;
+    transform: rotate(45deg) translate(10px, 14px);
+  }
+  .icon-menu._active::after {
+    content: "";
+    width: 56px;
+    height: 6px;
+    transform: rotate(-45deg) translate(10px, -14px);
+  }
+
+  .menu__body {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    padding-top: 100px;
+    padding-right: 50px;
+    background: linear-gradient(
+      to right,
+      rgba(14, 14, 14, 0.8) 0%,
+      rgba(14, 14, 14, 1) 35%,
+      rgba(14, 14, 14, 1) 100%
+    );
+    transition: right 0.3s ease 0s;
+    overflow: auto;
+  }
+  .menu__body._active {
+    right: 0;
+  }
+  .menu__body._active::before {
+    content: "";
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    min-height: 78px;
+    top: 0;
+    left: 0;
+    background-color: rgba(14, 14, 14, 1);
+  }
+  .header--scrolled .menu__body._active::before {
+    content: "";
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    min-height: 58px;
+    top: 0;
+    left: 0;
+    background-color: rgba(14, 14, 14, 1);
+  }
+  .header__container,
+  .header__actions {
+    column-gap: 30px;
+  }
+
+  .menu__list {
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 2em;
+  }
+  .menu__link {
+    font-size: 2.5rem;
+  }
+  .header__button {
+    padding: 0.75rem 1.25rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .header__container {
+    column-gap: 10px;
+  }
+  .header__logo {
+    margin-left: -20px;
+    margin-right: -20px;
+    transform: scale(0.7);
+  }
+  .header__actions {
+    flex-wrap: nowrap;
+    margin-left: -10px;
+    column-gap: 10px;
+    row-gap: 5px;
+  }
+  .actions__signup {
+    max-width: none;
+    min-height: 0;
+    padding: 14px 8px;
+  }
+}
