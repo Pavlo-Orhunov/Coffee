@@ -44,7 +44,10 @@
     min-height: 58px;
   }
 }
-
+.header__container,
+.header__actions {
+  column-gap: 30px;
+}
 .header__logo {
   position: relative;
   z-index: 5;
@@ -201,6 +204,7 @@
     left: 0;
     background-color: rgba(14, 14, 14, 1);
   }
+
   .menu__list {
     flex-direction: column;
     align-items: flex-end;
