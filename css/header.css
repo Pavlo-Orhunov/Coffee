@@ -15,7 +15,7 @@
 .header__width {
   max-width: var(--wrapper-width);
   margin: 0 auto;
-  transition: min-height 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: min-height 0.3s ease, background-color 0.3s ease;
 }
 .header--scrolled .header__width {
   background-color: rgba(14, 14, 14, 0.75);
@@ -31,7 +31,7 @@
   min-height: 88px;
   padding-top: 5px;
   padding-bottom: 5px;
-  transition: min-height 0.3s ease 0s;
+  transition: min-height 0.3s ease;
 }
 .header--scrolled .header__container {
   min-height: 60px;
@@ -130,7 +130,7 @@
     width: 100%;
     border-radius: 10px;
     background-color: var(--color-white);
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease;
   }
   .icon-menu::before,
   .icon-menu::after {
@@ -178,7 +178,7 @@
       rgba(14, 14, 14, 1) 35%,
       rgba(14, 14, 14, 1) 100%
     );
-    transition: right 0.3s ease 0s;
+    transition: right 0.3s ease;
     overflow: auto;
   }
   .menu__body._active {

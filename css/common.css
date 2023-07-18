@@ -15,12 +15,12 @@
   color: var(--color-dark-text);
   background-color: var(--color-buttons);
   white-space: nowrap;
-  transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease;
 }
 .button:hover,
 .button:focus {
   background-color: hsl(36, 92%, 50%);
-  transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .button:active {
   transform: scale(0.95);
@@ -43,9 +43,9 @@
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
-    transition: width 0.3s ease 0s;
-    -webkit-transition: width 0.3s ease 0s;
-    -moz-transition: width 0.3s ease 0s;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+    -moz-transition: width 0.3s ease;
   }
   .white-underline:hover::after,
   .white-underline:active::after {

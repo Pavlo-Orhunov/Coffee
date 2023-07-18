@@ -118,7 +118,7 @@
   /* margin: 0 4px; */
 }
 .social__link img {
-  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease;
 }
 .social__link:hover img {
   transform: scale(1.2);
@@ -208,7 +208,7 @@
     border-radius: 2px;
     transform: rotate(135deg);
     display: inline-block;
-    transition: transform 0.2s ease 0s;
+    transition: transform 0.2s ease;
   }
   .menu-footer__title._active::after {
     top: 12px;

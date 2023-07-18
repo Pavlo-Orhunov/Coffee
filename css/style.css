@@ -116,7 +116,7 @@ body {
   box-shadow: 0px 6px 12px 0px rgba(249, 192, 106, 0.22);
 }
 .hero__image,
-.hero__button {
+.hero__wrapper-button {
   transform: translate(4rem, 4rem);
   opacity: 0;
   transition: transform 0.8s, opacity 0.8s;
@@ -125,19 +125,16 @@ body {
 .loaded .hero__image {
   transition-delay: 0.5s;
 }
-.loaded .hero__button {
+.loaded .hero__wrapper-button {
   transition-delay: 0.9s;
 }
 
 .loaded .hero__image,
-.loaded .hero__button {
+.loaded .hero__wrapper-button {
   transform: translate(0, 0);
   opacity: 1;
 }
-.loaded .button:hover,
-.loaded .button:focus {
-  transition-delay: 0s;
-}
+
 @media (max-width: 991.98px) {
   .hero {
     background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0.5) 100%),
@@ -294,7 +291,7 @@ body {
   padding-bottom: 79.285714%; /* 222/280 */
 }
 .card-explore__image img {
-  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease;
 }
 .card-explore__image:hover img {
   transform: scale(1.02);
@@ -313,7 +310,7 @@ body {
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;
-  transition: color 0.3s ease 0s;
+  transition: color 0.3s ease;
 }
 .card-explore__title:hover {
   color: var(--color-dark-text);
@@ -411,7 +408,7 @@ body {
   padding: 36px;
   border: 1px solid rgba(249, 192, 106, 0.42);
   background-color: var(--color-cards-bg);
-  transition: background-color 0.3s ease 0s, border 0.3s ease 0s;
+  transition: background-color 0.3s ease, border 0.3s ease;
 }
 .why__card:hover {
   background-color: var(--color-cards-hover);
@@ -662,7 +659,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   line-height: 200%; /* 36/18 */
-  transition: color 0.3s ease 0s;
+  transition: color 0.3s ease;
 }
 .slide-feedback__text:hover {
   color: var(--color-dark-text);
@@ -675,7 +672,7 @@ body {
   font-weight: 700;
   line-height: 1.2;
   border-bottom: 2px solid var(--color-primary);
-  transition: color 0.3s ease 0s, border-bottom 0.3s ease 0s;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 .slide-feedback__name:hover {
   color: var(--color-dark-text);
@@ -714,7 +711,7 @@ body {
   width: 82px;
   height: 82px;
   background: url("../img/feedback/arrow.svg") center no-repeat;
-  transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease;
 }
 .feedback__arrow:hover {
   opacity: 0.8;
@@ -879,7 +876,7 @@ body {
 }
 .subscribe__input::placeholder {
   color: rgba(0, 0, 0, 0.34);
-  transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease;
 }
 .subscribe__input:focus::placeholder {
   opacity: 0;
