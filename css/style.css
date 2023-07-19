@@ -1,15 +1,14 @@
-/*-----Reset style-----*/
+/*======= Reset styles =======*/
 @import url("reset.css");
-/*-----Fonts------------*/
+/*======= Fonts =======*/
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
-/*------Common styles----------*/
+/*======= Common styles =======*/
 @import url("common.css");
-/*--------------------*/
+/*======= Header styles =======*/
 @import url("header.css");
-/*--------------------*/
-@import url("main.css");
-/*--------------------*/
+/*======= Footer styles =======*/
 @import url("footer.css");
+
 /*--------------------*/
 :root {
   /* colors */
@@ -21,21 +20,18 @@
   --color-cards-hover: #ffeed8;
   --color-buttons: #f9c06a;
 
-  /* --wrapper-width: 1366px; */
   --wrapper-width: 1606px;
 }
 body {
   font-family: "Playfair Display", serif;
   color: var(--color-gray-text);
-  background-color: #1e1e1e;
+  background-color: var(--color-dark-text);
   font-size: 20px;
 }
 .body--lock {
   overflow: hidden;
 }
-
 /*--------------------*/
-
 .wrapper {
   min-height: 100%;
   max-width: var(--wrapper-width);
@@ -45,10 +41,18 @@ body {
   overflow: hidden;
   background-color: #fffefc;
 }
-
 .wrapper > main {
   flex: 1 1 auto;
 }
+/*--------------------*/
+[class*="__container"] {
+  max-width: calc(1180px + 30px);
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/*======= Main page styles =======*/
 .page__hero {
 }
 .page__discover {
@@ -63,14 +67,8 @@ body {
 }
 .page__subscribe {
 }
-/*--------------------*/
-[class*="__container"] {
-  max-width: calc(1180px + 30px);
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-/*------------------ hero -------------------*/
+
+/*------------ hero ------------*/
 .hero {
   padding-top: 183px;
   padding-bottom: 85px;
@@ -121,7 +119,7 @@ body {
   opacity: 0;
   transition: transform 0.8s, opacity 0.8s;
 }
-/* -------- animation ----------------- */
+/*------------ hero__animation ------------*/
 .loaded .hero__image {
   transition-delay: 0.5s;
 }
@@ -173,8 +171,7 @@ body {
   }
 }
 
-/*------------------ discover -------------------*/
-
+/*------------ discover ------------*/
 .discover {
   padding-top: 150px;
 }
@@ -245,7 +242,8 @@ body {
     width: 75%;
   }
 }
-/*------------------ explore -------------------*/
+
+/*------------ explore ------------*/
 .explore {
   padding-top: 150px;
 }
@@ -367,7 +365,8 @@ body {
     right: 0;
   }
 }
-/*------------------ why -------------------*/
+
+/*------------ why ------------*/
 .why {
   padding-top: 66px;
   padding-bottom: 82px;
@@ -475,7 +474,7 @@ body {
   }
 }
 
-/*------------------ chance -------------------*/
+/*------------ chance ------------*/
 .chance {
   padding-top: 55px;
   padding-bottom: 55px;
@@ -577,7 +576,7 @@ body {
   }
 }
 
-/*------------------ feedback -------------------*/
+/*------------ feedback ------------*/
 .feedback {
   padding-top: 82px;
   padding-bottom: 82px;
@@ -631,8 +630,6 @@ body {
   padding: 0 41px 56px;
 }
 .slide-feedback {
-}
-.swiper-slide {
 }
 .slide-feedback__body {
   position: relative;
@@ -791,7 +788,7 @@ body {
   }
 }
 
-/*------------------ subscribe -------------------*/
+/*------------ subscribe ------------*/
 .subscribe {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -814,8 +811,6 @@ body {
   left: 0;
   object-fit: cover;
   opacity: 0.2;
-}
-.subscribe__bg {
 }
 .subscribe__container {
   position: relative;
