@@ -10,7 +10,7 @@
 
 /*======= User variables =======*/
 :root {
-  /* colors */
+  /* Define color variables */
   --color-primary: #603809;
   --color-white: #ffffff;
   --color-dark-text: #1e1e1e;
@@ -19,10 +19,11 @@
   --color-cards-hover: #ffeed8;
   --color-buttons: #f9c06a;
 
-  --wrapper-width: 1606px;
+  --wrapper-width: 1606px; /* Define a variable for the wrapper width */
 }
 
 /*======= Reset styles =======*/
+/* Reset default styles for various elements */
 *,
 *::before,
 *::after {
@@ -101,6 +102,46 @@ h6 {
 }
 
 /*======= Common styles =======*/
+/* Some common styles used throughout the website */
+
+body {
+  font-family: "Playfair Display", serif;
+  color: var(--color-gray-text);
+  background-color: var(--color-dark-text);
+  font-size: 20px;
+}
+/* Blocks body scrolling when hamburger menu is active */
+.body--lock {
+  overflow: hidden;
+}
+/*--------------------*/
+.wrapper {
+  min-height: 100%;
+  max-width: var(--wrapper-width);
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #fffefc;
+}
+.wrapper > main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+/*--------------------*/
+[class*="__container"] {
+  max-width: calc(1180px + 30px);
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* --------- button ---------------- */
 .button {
   display: -webkit-box;
@@ -172,16 +213,16 @@ h6 {
     width: 110%;
   }
 }
-/* ------------------------- */
+/* Title with the responsive font size below 1210px */
 .title {
   color: var(--color-primary);
   font-size: 54px;
   font-weight: 700;
   line-height: 1.2;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1210px) {
   .title {
-    font-size: 36px;
+    font-size: calc(36px + (54 - 36) * ((100vw - 320px) / (1210 - 320)));
   }
 }
 /* ------------------------- */
@@ -316,6 +357,9 @@ h6 {
   row-gap: 10px;
 }
 @media (max-width: 991.98px) {
+  .header--scrolled .header__width {
+    background-color: rgba(14, 14, 14, 0.85);
+  }
   .header__menu {
     margin-left: 0;
   }
@@ -369,17 +413,19 @@ h6 {
   font-weight: 500;
   color: var(--color-dark-text);
 }
+/* Hamburger menu button is hidden for the large screen resolutions */
 .icon-menu {
   display: none;
 }
 
 @media (max-width: 767.98px) {
+  /* Hamburger menu button (is displayed on resolutions less than 768px) */
   .icon-menu {
     position: relative;
     z-index: 5;
     display: block;
-    width: 36px;
-    height: 28px;
+    width: 26px;
+    height: 24px;
     cursor: pointer;
   }
   .icon-menu span,
@@ -387,7 +433,7 @@ h6 {
   .icon-menu::after {
     right: 0;
     position: absolute;
-    height: 14%;
+    height: 3px;
     width: 100%;
     border-radius: 10px;
     background-color: var(--color-white);
@@ -407,7 +453,7 @@ h6 {
   }
   .icon-menu span {
     width: 85%;
-    top: 49%;
+    top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
@@ -419,21 +465,20 @@ h6 {
   }
   .icon-menu._active::before {
     content: "";
-    width: 38px;
-    height: 4px;
-    -webkit-transform: rotate(45deg) translate(8px, 10px);
-    -ms-transform: rotate(45deg) translate(8px, 10px);
-    transform: rotate(45deg) translate(8px, 10px);
+    width: 32px;
+    -webkit-transform: rotate(45deg) translate(9px, 6px);
+    -ms-transform: rotate(45deg) translate(9px, 6px);
+    transform: rotate(45deg) translate(9px, 6px);
   }
   .icon-menu._active::after {
     content: "";
-    width: 38px;
-    height: 4px;
-    -webkit-transform: rotate(-45deg) translate(7px, -9px);
-    -ms-transform: rotate(-45deg) translate(7px, -9px);
-    transform: rotate(-45deg) translate(7px, -9px);
+    width: 32px;
+    -webkit-transform: rotate(-45deg) translate(9px, -6px);
+    -ms-transform: rotate(-45deg) translate(9px, -6px);
+    transform: rotate(-45deg) translate(9px, -6px);
   }
-  /* ------------------- */
+
+  /* Hamburger menu body */
   .menu__body {
     position: fixed;
     z-index: 3;
@@ -447,22 +492,23 @@ h6 {
       linear,
       left top,
       right top,
-      from(rgba(14, 14, 14, 0.8)),
-      color-stop(35%, rgba(14, 14, 14, 1)),
+      from(rgba(14, 14, 14, 0.9)),
+      color-stop(25%, rgba(14, 14, 14, 1)),
       to(rgba(14, 14, 14, 1))
     );
     background: -o-linear-gradient(
       left,
-      rgba(14, 14, 14, 0.8) 0%,
-      rgba(14, 14, 14, 1) 35%,
+      rgba(14, 14, 14, 0.9) 0%,
+      rgba(14, 14, 14, 1) 25%,
       rgba(14, 14, 14, 1) 100%
     );
     background: linear-gradient(
       to right,
-      rgba(14, 14, 14, 0.8) 0%,
-      rgba(14, 14, 14, 1) 35%,
+      rgba(14, 14, 14, 0.9) 0%,
+      rgba(14, 14, 14, 1) 25%,
       rgba(14, 14, 14, 1) 100%
     );
+
     -webkit-transition: right 0.3s ease;
     -o-transition: right 0.3s ease;
     transition: right 0.3s ease;
@@ -471,6 +517,8 @@ h6 {
   .menu__body._active {
     right: 0;
   }
+
+  /* Additional background for active scrolled menu */
   .menu__body._active::before {
     content: "";
     position: fixed;
@@ -482,14 +530,7 @@ h6 {
     background-color: rgba(14, 14, 14, 1);
   }
   .header--scrolled .menu__body._active::before {
-    content: "";
-    position: fixed;
-    z-index: 2;
-    width: 100%;
     min-height: 58px;
-    top: 0;
-    left: 0;
-    background-color: rgba(14, 14, 14, 1);
   }
 
   .menu__list {
@@ -532,7 +573,7 @@ h6 {
   .actions__signup {
     max-width: none;
     min-height: 0;
-    padding: 14px 8px;
+    padding: 12px 14px;
   }
 }
 
@@ -824,44 +865,6 @@ h6 {
   .contacts__web {
     font-size: 20px;
   }
-}
-
-/*--------------------*/
-body {
-  font-family: "Playfair Display", serif;
-  color: var(--color-gray-text);
-  background-color: var(--color-dark-text);
-  font-size: 20px;
-}
-.body--lock {
-  overflow: hidden;
-}
-/*--------------------*/
-.wrapper {
-  min-height: 100%;
-  max-width: var(--wrapper-width);
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: hidden;
-  background-color: #fffefc;
-}
-.wrapper > main {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-/*--------------------*/
-[class*="__container"] {
-  max-width: calc(1180px + 30px);
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 /*======= Main page styles =======*/
@@ -1904,5 +1907,10 @@ body {
   .subscribe__button {
     margin-right: 0;
     max-width: 100%;
+  }
+  .subscribe__button {
+    min-height: 48px;
+    border-radius: 24px;
+    font-size: 16px;
   }
 }
