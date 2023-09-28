@@ -17,17 +17,16 @@
 - contacts form
 
 `Link to the layout Page`
-
 https://pavlo-orhunov.github.io/Coffee/
 
 <br>
 
 **_Preview for desktop layout version:_**
 
-![Desktop version preview](https://github.com/Pavlo-Orhunov/Home-Services/blob/master/images/Desktop.png "Desktop version preview")
+![Desktop version preview](https://github.com/Pavlo-Orhunov/Coffee/blob/master/img/desktop.jpg "Desktop version preview")
 
 <br>
 
 **_Preview for mobile layout version:_**
 
-![Mobile version preview](https://github.com/Pavlo-Orhunov/Home-Services/blob/master/images/Mobile.png "Mobile version preview")
+![Mobile version preview](https://github.com/Pavlo-Orhunov/Coffee/blob/master/img/mobile.jpg "Mobile version preview")
