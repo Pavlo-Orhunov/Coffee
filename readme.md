@@ -17,7 +17,8 @@
 - contacts form
 
 `Link to the layout Page`
-https://pavlo-orhunov.github.io/Home-Services/
+
+https://pavlo-orhunov.github.io/Coffee/
 
 <br>
 
