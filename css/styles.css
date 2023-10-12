@@ -187,17 +187,15 @@ body {
     width: 110%;
   }
 }
-/* Title with the responsive font size below 1210px */
 .title {
   color: var(--color-primary);
-  font-size: 54px;
+  font-size: clamp(
+    36px,
+    calc(36px + (54 - 36) * ((100vw - 320px) / (1210 - 320))),
+    54px
+  );
   font-weight: 700;
   line-height: 1.2;
-}
-@media (max-width: 1210px) {
-  .title {
-    font-size: calc(36px + (54 - 36) * ((100vw - 320px) / (1210 - 320)));
-  }
 }
 /* ------------------------- */
 ._ibg {
@@ -216,7 +214,6 @@ body {
 [data-item] {
   transform: translate(2rem, 2rem);
   opacity: 0;
-  /* transition: transform 0.7s, opacity 0.7s; */
   /* для начала появления анимации с задержкой 0,3секунды  */
   transition: opacity 0.7s ease-in-out 0.3s, transform 0.7s ease-in-out 0.3s;
 }
@@ -247,11 +244,11 @@ body {
   transition: min-height 0.3s ease, background-color 0.3s ease;
 }
 .header--scrolled .header__width {
-  background-color: rgba(14, 14, 14, 0.75);
+  background-color: rgba(30, 21, 19, 0.9);
 }
 @media (any-hover: hover) {
   .header--scrolled .header__width:hover {
-    background-color: rgba(14, 14, 14, 0.95);
+    background-color: rgba(30, 21, 19, 0.97);
   }
 }
 .header__container {
@@ -300,7 +297,7 @@ body {
 }
 @media (max-width: 991.98px) {
   .header--scrolled .header__width {
-    background-color: rgba(14, 14, 14, 0.85);
+    background-color: rgba(30, 21, 19, 0.97);
   }
   .header__menu {
     margin-left: 0;
@@ -405,9 +402,9 @@ body {
     padding-right: 50px;
     background: linear-gradient(
       to right,
-      rgba(14, 14, 14, 0.9) 0%,
-      rgba(14, 14, 14, 1) 25%,
-      rgba(14, 14, 14, 1) 100%
+      rgba(30, 21, 19, 0.9) 0%,
+      rgba(30, 21, 19, 1) 25%,
+      rgba(30, 21, 19, 1) 100%
     );
     transition: right 0.3s ease;
     overflow: auto;
@@ -417,7 +414,7 @@ body {
   }
 
   /* Additional background for active scrolled menu */
-  .menu__body._active::before {
+  .menu__body::before {
     content: "";
     position: fixed;
     z-index: 2;
@@ -425,8 +422,13 @@ body {
     min-height: 78px;
     top: 0;
     left: 0;
-    background-color: rgba(14, 14, 14, 1);
+    background-color: rgba(30, 21, 19, 0);
   }
+  .menu__body._active::before {
+    background-color: rgba(30, 21, 19, 1);
+    transition: background-color 0.3s ease 0.3s;
+  }
+
   .header--scrolled .menu__body._active::before {
     min-height: 58px;
   }
@@ -711,14 +713,10 @@ body {
 .hero {
   padding-top: 183px;
   padding-bottom: 85px;
+  min-height: 100vh;
   background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0) 100%),
     url("../img/hero/coffee_image.jpg") center / cover no-repeat,
-    rgb(14, 14, 14);
-}
-@media (min-width: 374.98px) {
-  .hero {
-    min-height: 100vh;
-  }
+    rgb(30, 21, 19);
 }
 @media (max-width: 374.98px) {
   .hero {
@@ -760,10 +758,10 @@ body {
 }
 /*------------ hero__animation ------------*/
 .loaded .hero__image {
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
 }
 .loaded .hero__wrapper-button {
-  transition-delay: 0.9s;
+  transition-delay: 0.5s;
 }
 
 .loaded .hero__image,
@@ -776,7 +774,7 @@ body {
   .hero {
     background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0.5) 100%),
       url("../img/hero/coffee_image.jpg") center / cover no-repeat,
-      rgb(14, 14, 14);
+      rgb(30, 21, 19);
   }
 }
 @media (max-width: 479.98px) {
@@ -785,7 +783,7 @@ body {
     padding-bottom: 25px;
     background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0.75) 100%),
       url("../img/hero/coffee_image.jpg") center / cover no-repeat,
-      rgb(14, 14, 14);
+      rgb(30, 21, 19);
   }
   .hero {
     display: flex;
@@ -807,6 +805,33 @@ body {
   .hero__label,
   .hero__image {
     margin-bottom: 10px;
+  }
+}
+@media (max-height: 560px) {
+  .hero {
+    padding-top: 85px;
+  }
+  .hero__image {
+    position: relative;
+    height: 120px;
+    margin-bottom: 5px;
+    aspect-ratio: 455 / 217;
+  }
+  .hero__image img {
+    position: absolute;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .hero__label {
+    margin-bottom: 10px;
+  }
+  .hero__title {
+    font-size: 18px;
+    max-width: 590px;
   }
 }
 
@@ -832,7 +857,6 @@ body {
 
 .discover__image {
   flex: 0 1 50%;
-  /* margin-top: -70px; */
   text-align: right;
 }
 @media (max-width: 1200px) {
