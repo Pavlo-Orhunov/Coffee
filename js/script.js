@@ -84,16 +84,46 @@ if (headerElement) {
   console.error("Header element not found.")
 }
 
-// ------------- hamburger menu ---------
+// ------------- hamburger menu -------------
 const iconMenu = document.querySelector(".icon-menu")
 const menuBody = document.querySelector(".menu__body")
+const menuLinks = document.querySelectorAll(".menu__link")
+
 if (iconMenu) {
   iconMenu.addEventListener("click", function (e) {
+    toggleMenu()
+  })
+
+  //event handlers for menu items
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      if (iconMenu.classList.contains("_active")) {
+        toggleMenu()
+      }
+    })
+  })
+
+  // toggle menu function
+  function toggleMenu() {
     document.body.classList.toggle("body--lock")
     iconMenu.classList.toggle("_active")
     menuBody.classList.toggle("_active")
+  }
+
+  // close hamburger menu on device rotating
+  window.addEventListener("orientationchange", function () {
+    if (document.body.classList.contains("body--lock")) {
+      document.body.classList.remove("body--lock")
+    }
+    if (iconMenu.classList.contains("_active")) {
+      iconMenu.classList.remove("_active")
+    }
+    if (menuBody.classList.contains("_active")) {
+      menuBody.classList.remove("_active")
+    }
   })
 }
+// ------------- END OF hamburger menu -------------
 
 // ----- Spoilers ---------------------
 const spoilersArray = document.querySelectorAll("[data-spoilers]")
