@@ -1,4 +1,4 @@
-# This landing page is designed on a basis of a template kindly provided by Evhen Andrikanych. HTML CSS JS, FIGMA.<br>
+# This landing page is designed on a basis of a template kindly provided by Yevhen Andrikanych. HTML CSS JS, FIGMA.<br>
 
 ## Made after taking a free YouTube course. Template from Patreon.<br>
 
